@@ -1,6 +1,7 @@
 # BECoTTA: Input-dependent Online Blending of Experts for Continual Test-time Adaptation
 > The code will be updated soon. 
 
+Daeun Lee*, Jaehong Yoon*, Sung Ju Hwang (* denotes equal contribution) 
 
 <img width="928" alt="image" src="https://github.com/daeunni/BECoTTA/assets/62705839/511417bf-bb8b-46c2-81ec-7ab9c208b92e">
 
