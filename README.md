@@ -2,7 +2,7 @@
 [![Project Website](https://img.shields.io/badge/Project-Website-blue)](https://becotta-ctta.github.io/)  [![arXiv](https://img.shields.io/badge/arXiv-2402.08712-b31b1b.svg)](https://arxiv.org/pdf/2402.08712.pdf)   
 
 - Authors: [Daeun Lee*](https://daeunni.github.io/),  [Jaehong Yoon*](https://jaehong31.github.io/),  [Sung Ju Hwang](http://www.sungjuhwang.com/) (* denotes equal contribution)    
-> More details will be updated soon! 
+
 
 <img width="928" alt="image" src="https://github.com/daeunni/BECoTTA/assets/62705839/511417bf-bb8b-46c2-81ec-7ab9c208b92e">
 
