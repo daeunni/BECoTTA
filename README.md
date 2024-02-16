@@ -28,18 +28,18 @@ bash ./tools/becotta.sh
   - 📣 Note that our source model (Segformer) mainly uses *pretty low mmcv version*. (`mmcv==1.2.0`)
   
 **1. You can create conda environment using `.yaml` file we provided.** 
-```
+```shell
 conda env update --name cotta --file environment.yml
 conda activate cotta
 ```
 
 **2. You can install mmcv by yourself.**
 - Our code is tested `torch 1.7.0 + cuda 11.0 + mmcv 1.2.0`
-```
+```shell
 pip install torch==1.7.0+cu110 torchvision==0.8.1+cu110 https://download.pytorch.org/whl/torch_stable.html
 ```
 - Install lower version of mmcv refer to [this issue](https://github.com/open-mmlab/mmcv/issues/1386#issuecomment-933577744).
-```
+```shell
 pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/index.html
 ```
 
@@ -49,7 +49,7 @@ pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dis
   - Setup `Fog -> Night -> Rain -> Snow` scenario using train dataset.
   - You need to change `becotta/local_configs/_base_/datasets/acdc_1024x1024_repeat_origin.py` to your own path.
     
-    ```
+    ```shell
     # dataset settings
     dataset_type = 'ACDCDataset'
     data_root = 'your data path'   
@@ -66,15 +66,37 @@ pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dis
 ### [3] Pre-trained model 
 - We mainly adopt pre-trained Segformer with Cityscapes dataset.
   - You can `segformer.b5.1024x1024.city.160k.pth` [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
-  - Also, you can find `mit_b5.pth` backbone [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
-
+  - Also, you can find `mit_b5.pth` backbone [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). Please located them at `./pretrained/` directory. 
+  
 
 ## 📁 Note 
 ### [1] Checkpoint of our model 
 - We provide our trained initialized model checkpoints [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
   - If you need more experiments, feel free to email `goodgpt@korea.ac.kr`. :-) 
 
-### [2] TODO 
+### [2] Flexibility of BECoTTA 
+- As we mentioned in our paper, you can freely change the rank of experts, number of experts, and selected number of experts ($K$).
+- e.g. You can modify it as follows.
+
+  ```python
+  class mit_b5_EveryMOEadapter_wDomain(MOE_MixVisionTransformer_EveryAdapter_wDomain):
+      def __init__(self, **kwargs):
+          super(mit_b5_EveryMOEadapter_wDomain, self).__init__(
+              patch_size=4, embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], 
+              mlp_ratios=[4, 4, 4, 4],
+              qkv_bias=True, norm_layer=partial(nn.LayerNorm, eps=1e-6), 
+              depths=[3, 6, 40, 3], 
+              sr_ratios=[8, 4, 2, 1],
+              drop_rate=0.0, drop_path_rate=0.1, 
+              expert_num=6,                        # Modify here 
+              select_mode='new_topk', 
+              hidden_dims = [2, 4, 10, 16],        # Modify here 
+              num_k = 3                            # Modify here 
+              )   
+  ```
+
+
+### [3] TODO 
 - [ ] Construction process of Continual Gradual Shifts (CGS) scenario will be updated. 
 - [ ] Warmup initializing process will be updated. 
 - [x] Whole process of CTTA was added.
