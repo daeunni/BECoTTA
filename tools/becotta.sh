@@ -1,5 +1,5 @@
 # #!/usr/bin/env bash
-TTA_CONFIG=/d1/daeun/acdc-submission/local_configs/segformer/B5/tta.py  
+TTA_CONFIG=./local_configs/segformer/B5/tta.py  
 
 GPUS=1
 TTA_PORT=${PORT:-34622}
