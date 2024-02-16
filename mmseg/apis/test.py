@@ -40,7 +40,6 @@ def Entropy_based(model,
                   source_model=None, 
                   w_domain_pred=None, 
                   is_viz=False, 
-                  filtering=False, 
                 ):    
     model.eval()       
     source_model.eval()
@@ -82,19 +81,17 @@ def Entropy_based(model,
                             w_domain_pred=w_domain_pred,          
                             **data)
             mask = (probs[ORI][0] > 0.69).astype(np.int64)   # 0.69  : reuse cotta's threshold 
-            
-            if filtering :     
-                ori_result, ori_probs, ori_preds = source_model(return_loss=False,                 
-                                                        w_domain_pred=w_domain_pred,          
-                                                        **data)
-                y_0 = ori_probs[ORI][0]      
-                y_cur = probs[ORI][0]
-                mask_filtering = (y_cur - y_0 >= 0).astype(np.int64)           
-                mask = np.where((mask == 1) & (mask_filtering == 1), 1, 0)     
-                result = [ (mask * preds[ORI][0] + (1.- mask) * result[0]).astype(np.int64) ]     
+               
+            ori_result, ori_probs, ori_preds = source_model(return_loss=False,                 
+                                                    w_domain_pred=w_domain_pred,          
+                                                    **data)
+            y_0 = ori_probs[ORI][0]      
+            y_cur = probs[ORI][0]
+            mask_filtering = (y_cur - y_0 >= 0).astype(np.int64)           
+            mask = np.where((mask == 1) & (mask_filtering == 1), 1, 0)     
+            result = [ (mask * preds[ORI][0] + (1.- mask) * result[0]).astype(np.int64) ]     
                 
-            else : 
-                result = [ (mask * preds[ORI][0] + (1.- mask) * result[0]).astype(np.int64) ]    
+            # result = [ (mask * preds[ORI][0] + (1.- mask) * result[0]).astype(np.int64) ]    
                 
         if isinstance(result, list): 
             PSEUDO_LABEL = torch.from_numpy(result[0]).cuda().unsqueeze(0).unsqueeze(0)    
