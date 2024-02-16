@@ -13,6 +13,8 @@ BATCH_SIZE = 1
 EXP_NUMS = 4                  # NOTE Expert numbers        
 num_step1_domain = 4          # NOTE use it at the decoder part
 w_domain_pred = True          # NOTE control forward function when we use pseudo domain label
+TTA_SEGLOSS_weight = 1.0
+warmup_domains = {'train' : 0, 'rain_syn' : 1, 'night_syn' : 2, 'fog_rendering' : 3}
 
 checkpoint_config = dict(by_epoch=False, interval=30000) 
 data = dict(samples_per_gpu=BATCH_SIZE)     
