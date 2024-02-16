@@ -65,7 +65,7 @@ pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dis
 ### [3] Pre-trained model 
 - We mainly adopt pre-trained Segformer with Cityscapes dataset.
   - You can `segformer.b5.1024x1024.city.160k.pth` here. 
-  - Also, you can find mit_b5.pth backbone here. 
+  - Also, you can find `mit_b5.pth` backbone here. 
 
 
 ## 📁 Note 
