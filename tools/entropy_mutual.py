@@ -172,7 +172,6 @@ def main():
                                 source_model = source_model,  
                                 w_domain_pred = cfg.w_domain_pred,
                                 is_viz = True, 
-                                filtering = True, 
                                 ) 
             ender.record()
             torch.cuda.synchronize()
