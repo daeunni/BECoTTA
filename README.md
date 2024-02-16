@@ -76,4 +76,15 @@ pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dis
 ### [2] TODO 
 - [ ] Construction process of Continual Gradual Shifts (CGS) scenario will be updated. 
 - [ ] Warmup initializing process will be updated. 
-- [x] Whole process of CTTA was added. 
+- [x] Whole process of CTTA was added.
+
+
+## Reference 
+```
+@inproceedings{Lee2024BECoTTAIO,
+  title={BECoTTA: Input-dependent Online Blending of Experts for Continual Test-time Adaptation},
+  author={Daeun Lee and Jaehong Yoon and Sung Ju Hwang},
+  year={2024},
+  url={https://api.semanticscholar.org/CorpusID:267657972}
+}
+```
