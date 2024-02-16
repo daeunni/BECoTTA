@@ -13,6 +13,7 @@ To tackle these challenges, this paper proposes BECoTTA, an input-dependent yet 
 
 ## 🚗 Main process of CTTA (Continual Test-time Adaptation) 
 - You can set our main config file. `becotta/local_configs/segformer/B5/tta.py`
+- You can find our initialized model [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
 ```
 # CTTA process 
 bash ./tools/becotta.sh
@@ -64,14 +65,14 @@ pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dis
 
 ### [3] Pre-trained model 
 - We mainly adopt pre-trained Segformer with Cityscapes dataset.
-  - You can `segformer.b5.1024x1024.city.160k.pth` here. 
-  - Also, you can find `mit_b5.pth` backbone here. 
+  - You can `segformer.b5.1024x1024.city.160k.pth` [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
+  - Also, you can find `mit_b5.pth` backbone [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
 
 
 ## 📁 Note 
 ### [1] Checkpoint of our model 
-- We provide our trained initialized model checkpoints here. 
-  - If you need more experiments, feel free to email `goodgpt@korea.ac.kr` here. :-) 
+- We provide our trained initialized model checkpoints [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
+  - If you need more experiments, feel free to email `goodgpt@korea.ac.kr`. :-) 
 
 ### [2] TODO 
 - [ ] Construction process of Continual Gradual Shifts (CGS) scenario will be updated. 
