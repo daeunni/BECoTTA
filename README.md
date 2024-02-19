@@ -94,6 +94,13 @@ pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dis
               num_k = 3                            # Modify here 
               )   
   ```
+- Our model utilized these parameters as follows. Please refer to our main paper for more details. 
+  
+  |           | Exp | K |       Rank       |  MoDE |
+  |-----------|:---:|:-:|:----------------:|:-----:|
+  | BECoTTA-S |  4  | 3 |   [0, 0, 0, 6]   |  Last |
+  | BECoTTA-M |  6  | 3 |  [2, 4, 10, 16]  | Every |
+  | BECoTTA-L |  6  | 3 | [16, 32, 60, 80] | Every |
 
 
 ### [3] TODO 
