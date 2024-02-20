@@ -13,7 +13,7 @@ To tackle these challenges, this paper proposes BECoTTA, an input-dependent yet 
 
 ## 🚗 Main process of CTTA (Continual Test-time Adaptation) 
 - You can set our main config file. `becotta/local_configs/segformer/B5/tta.py`
-- You can find our initialized model [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). 
+- You can find our initialized model [here](https://drive.google.com/drive/folders/1e1ZIyYVlZL4OS67K1vD6TmFvyFlCsBxA?usp=sharing). Please note that this code is based on `w/ WAD` setting. 
 ```
 # CTTA process 
 bash ./tools/becotta.sh
