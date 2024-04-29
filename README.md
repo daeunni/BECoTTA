@@ -3,8 +3,10 @@
 
 - Authors: [Daeun Lee*](https://daeunni.github.io/),  [Jaehong Yoon*](https://jaehong31.github.io/),  [Sung Ju Hwang](http://www.sungjuhwang.com/) (* denotes equal contribution)    
 
+> 🚨 **The new version of BECoTTA will be updated soon! We improved some methods and they will be updated soon.** 
 
-<img width="928" alt="image" src="https://github.com/daeunni/BECoTTA/assets/62705839/511417bf-bb8b-46c2-81ec-7ab9c208b92e">
+<img width="928" alt="image" src="https://github.com/daeunni/BECoTTA/assets/62705839/511417bf-bb8b-46c2-81ec-7ab9c208b92e">  
+
 
 ## Abstract 
 Continual Test Time Adaptation (CTTA) is required to adapt efficiently to continuous unseen domains while retaining previously learned knowledge. However, despite the progress of
