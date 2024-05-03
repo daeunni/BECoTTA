@@ -1,4 +1,4 @@
-# BECoTTA: Input-dependent Online Blending of Experts for Continual Test-time Adaptation
+# BECoTTA: Input-dependent Online Blending of Experts for Continual Test-time Adaptation [ICML2024]
 [![Project Website](https://img.shields.io/badge/Project-Website-blue)](https://becotta-ctta.github.io/)  [![arXiv](https://img.shields.io/badge/arXiv-2402.08712-b31b1b.svg)](https://arxiv.org/pdf/2402.08712.pdf)   
 
 - Authors: [Daeun Lee*](https://daeunni.github.io/),  [Jaehong Yoon*](https://jaehong31.github.io/),  [Sung Ju Hwang](http://www.sungjuhwang.com/) (* denotes equal contribution)    
