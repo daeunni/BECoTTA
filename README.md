@@ -113,10 +113,10 @@ pip install mmcv-full=={mmcv_version} -f https://download.openmmlab.com/mmcv/dis
 
 ## Reference 
 ```
-@inproceedings{Lee2024BECoTTAIO,
-  title={BECoTTA: Input-dependent Online Blending of Experts for Continual Test-time Adaptation},
-  author={Daeun Lee and Jaehong Yoon and Sung Ju Hwang},
-  year={2024},
-  url={https://api.semanticscholar.org/CorpusID:267657972}
+@inproceedings{lee2024becotta,
+    title={BECoTTA: nput-dependent Online Blending of Experts for Continual Test-time Adaptation},
+    author={Lee, Daeun and Yoon, Jaehong and Hwang, Sung Ju},
+    booktitle={International Conference on Machine Learning},
+    year={2024},
 }
 ```
